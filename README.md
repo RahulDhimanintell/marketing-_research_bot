@@ -1,6 +1,8 @@
 # Resbot crewai
 
-Before getting started make sure poetry is installed.
+Before getting started make sure poetry is installed. To install poetry install pipx first and then install poetry using pipx.
+
+
 ### create virtual environment in windows
 ```
 py -m venv env
@@ -45,7 +47,7 @@ pip install crewai crewai-tools
 
 ### Move to project folder
 ```
-cd rebot
+cd resbot
 ```
 
 follow further instruction in README.md file in resbot.
