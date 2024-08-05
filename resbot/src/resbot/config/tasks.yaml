@@ -1,0 +1,20 @@
+research_task:
+  description: >
+    Conduct a thorough research about {topic}
+    Make sure you find any interesting and relevant information given
+    the current year is 2024.
+  expected_output: >
+    compose the answers of research asistant points follow points to Create Docs and append as follow: 
+    1. write name of company at top on which you made a research, 2. write a conclusive title based on research 
+    3. header "Business needs", 4. Header "Our Strategy" Intelligaia Technology's Stretegy, 
+    5. Header "Project Contribution", 6. Header "Design", 7. Header "Project management" 8. Header "Marketing" 
+    9. "Methodology Highlights Our Specific Experience And How It Helped" 9. Header "Handling Unique Project Needs", 
+    10. Header "User Research and Insights" , 11. Header "Similarity of Scopes within other projects
+
+reporting_task:
+  description: >
+    Review the context you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+  expected_output: >
+    An email to pitch {topic}, with a full section of information.
+    Formatted as markdown without '```'
