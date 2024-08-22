@@ -2,30 +2,56 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
 # Uncomment the following line to use an example of a custom tool
-# from resbot.tools.custom_tool import MyCustomTool
+from resbot.tools.custom_tool import MyCustomTool, SearchTools
 
 # Check our tools documentations for more information on how to use them
 # from crewai_tools import SerperDevTool
 
 @CrewBase
 class ResbotCrew():
+
 	"""Resbot crew"""
 	agents_config = 'config/agents.yaml'
 	tasks_config = 'config/tasks.yaml'
+
+
+	
+	@agent
+	def news_reporter(self) -> Agent:
+		return Agent(
+			config=self.agents_config['news_reporter'],
+			tools=[SearchTools.search_internet, SearchTools.search_news], # Example of custom tool, loaded on the beginning of file
+			verbose=True, #logs
+			# max_iter = 2
+		)
 
 	@agent
 	def researcher(self) -> Agent:
 		return Agent(
 			config=self.agents_config['researcher'],
-			# tools=[MyCustomTool()], # Example of custom tool, loaded on the beginning of file
-			verbose=True
+			tools=[SearchTools.search_internet], # Example of custom tool, loaded on the beginning of file
+			verbose=True,
+			# max_iter = 2,
+			allow_delegation = True
 		)
 
-	@agent
-	def reporting_analyst(self) -> Agent:
-		return Agent(
-			config=self.agents_config['reporting_analyst'],
-			verbose=True
+	# @agent
+	# def reporting_analyst(self) -> Agent:
+	# 	return Agent(
+	# 		config=self.agents_config['reporting_analyst'],
+	# 		verbose=True,
+	# 		# max_iter = 2,
+	# 		allow_delegation = True
+	# 	)
+	
+	
+	
+	@task
+	def news_reporting_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['news_reporting_task'],
+			agent=self.news_reporter(),
+			output_file='newsreport.md'
 		)
 
 	@task
@@ -36,13 +62,14 @@ class ResbotCrew():
 			output_file='report1.md'
 		)
 
-	@task
-	def reporting_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['reporting_task'],
-			agent=self.reporting_analyst(),
-			output_file='report.md'
-		)
+	# @task
+	# def reporting_task(self) -> Task:
+	# 	return Task(
+	# 		config=self.tasks_config['reporting_task'],
+	# 		agent=self.reporting_analyst(),
+	# 		output_file='report.md'
+	# 	)
+	
 
 	@crew
 	def crew(self) -> Crew:

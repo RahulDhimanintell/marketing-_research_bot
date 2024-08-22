@@ -1,6 +1,6 @@
 research_task:
   description: >
-    Conduct a thorough research about {topic}
+    Conduct a thorough research about the selected company: {topic}
     Make sure you find any interesting and relevant information given
     the current year is 2024.
   expected_output: >
@@ -16,5 +16,26 @@ reporting_task:
     Review the context you got and expand each topic into a full section for a report.
     Make sure the report is detailed and contains any and all relevant information.
   expected_output: >
-    An email to pitch {topic}, with a full section of information.
-    Formatted as markdown without '```'
+    An email to pitch {topic}. Do provide the reference of the relevant case studies from resercher agent. 
+    Formatted as markdown without '```'.Start the email with wishes from intelligaia and conclude everything in 2 paragraphs.Don’t always use the most natural words. Use the following words fewer than 3 times on this page: unique, ensure, utmost. Before outputting the content, review it for the following words and rewrite those sentences with appropriate alternatives: meticulous, meticulously, navigating, complexities, realm, bespoke, tailored, towards, underpins, everchanging, ever-evolving, the world of, not only, seeking more than just, designed to enhance, it’s not merely, our suite, it is advisable, daunting, in the heart of, when it comes to, in the realm of, amongst, unlock the secrets, unveil the secrets, and robust. 
+    Words to avoid: Navigate, Meticulous, Meticulously, Navigating, Complexities, Realm, Bespoke, Tailored, Towards, Underpins, 
+    Everchanging, Ever-evolving, The world of, Not only, Seeking more than just, Designed to enhance, It’s not merely, Our suite, 
+    It is advisable, Daunting, In the heart of, When it comes to, In the realm of, Amongst, Unlock the secrets, Unveil the secrets, 
+    Robust, Innovative, Seamless, Holistic, Cutting-edge, State-of-the-art, Comprehensive, Integrate, Optimize, Leverage, Transform, 
+    Revolutionize, Paradigm, Synergy, Streamline, Efficiency, Empower, Facilitate, Scalability, Strategic, Dynamic, Versatile, 
+    Proactive, Pioneering, Sophisticated, Insightful, Groundbreaking, Efficacy, Alignment, Utilize, Augment, Enhance, Ecosystem, 
+    Framework, Sustainable, User-centric, Value proposition, Elevate, Benchmark, Holistic approach, Customer-centric, 
+    Solutions-oriented, Performance-driven, Adaptive, Evolutionary, Tailored solutions, Comprehensive approach, Customizable, 
+    End-to-end, Next-generation, Optimal, Agile, Result-oriented, Best practices, Modular, Core competencies, Proprietary, 
+    Transformative, Unparalleled, Next-level, Game-changer, Synergize, Best-in-class, Customer-focused.
+    
+
+
+news_reporting_task:
+  description: >
+    Review the context {topic} you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+  expected_output: >
+    the output should be a summary of latest news about their
+    tech innovation and technolgy interests ,technical blog posts summaries of firm 
+    employees of {topic}
